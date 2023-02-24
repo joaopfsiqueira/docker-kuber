@@ -18,11 +18,11 @@ from node
 
 ## workdir
 
-- Diretório da aplicação.
+- Diretório da aplicação. Onde vai salvar os arquivos da aplicação que estão sendo copiados pelo `COPY`
 
 ## copy
 
-- Quais arquivos locais precisam ser copiados para dentro do container.
+- Quais arquivos locais precisam ser copiados para dentro do `WORKDIR`
 
 ## expose
 
