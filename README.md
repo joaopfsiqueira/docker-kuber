@@ -25,7 +25,7 @@ from node
 - Quais arquivos locais precisam ser copiados para dentro do `WORKDIR`
 
 ```
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
@@ -62,3 +62,5 @@ CMD ["npm","start"]
 
 1 - Para rodarmos a nossa imagem e criar um container através dela, primeiro devemos _buildar_ a nossa imagem: `docker build <diretorio da imagem>`.<br>
 2 - Depois, as próximas vezes, só usamos o comando `docker run <imagem>` para executá-la
+
+`docker build .` dentro da pasta onde está o dockerfile
