@@ -26,13 +26,21 @@ from node
 
 ```
 COPY package*.json .
+
+RUN npm install
+
+COPY . .
 ```
 
-- No exemplo acima, pegamos todos os arquivos que tem package.json, e o último ponto especifica todos os outros arquivos.
+- No exemplo acima, pegamos todos os arquivos que tem package.json, e o últimos pontos especifica todos os outros arquivos.
 
 ## expose
 
 - Portas onde nossas aplicação vai rodar!
+
+```
+EXPOSE 3000
+```
 
 ## run
 
@@ -40,4 +48,12 @@ COPY package*.json .
 
 ```
 RUN npm install
+```
+
+## cmd
+
+- CMD é uma outra forma de rodar comandos no terminal, dessa vez após o inicio. Vale ressaltar que o comando espera uma lista.
+
+```
+CMD ["npm","start"]
 ```
