@@ -61,6 +61,8 @@ CMD ["npm","start"]
 # Executando uma imagem.
 
 1 - Para rodarmos a nossa imagem e criar um container através dela, primeiro devemos _buildar_ a nossa imagem: `docker build <diretorio da imagem>`.<br>
-2 - Depois, as próximas vezes, só usamos o comando `docker run <imagem>` para executá-la
+2 - Depois, as próximas vezes, só usamos o comando `docker run <imagem> ou id da imagem` para executá-la
 
 `docker build .` dentro da pasta onde está o dockerfile
+
+`docker run -d -p 3000:3000 b0f59f465ccb`, nesse exemplo, eu liberei o terminal com -d, e com o prefixo `-p 3000:3000` eu informei a porta que está rodando o meu container e tornei ela acessível na minha máquina para acessar no navegador. Depois só passei o id da imagem que eu buildei anteriormente, já que eu não configurei nenhum nome para a imagem.
