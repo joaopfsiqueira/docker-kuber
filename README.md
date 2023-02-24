@@ -24,6 +24,20 @@ from node
 
 - Quais arquivos locais precisam ser copiados para dentro do `WORKDIR`
 
+```
+COPY package*.json .
+```
+
+- No exemplo acima, pegamos todos os arquivos que tem package.json, e o último ponto especifica todos os outros arquivos.
+
 ## expose
 
 - Portas onde nossas aplicação vai rodar!
+
+## run
+
+- O comando `RUN` define o comando que será executado quando o container subir. No nosso exemplo, estamos copiando tudo o que está dentro da pasta local + o package.json. Dito isso, quando clonamos um repositório, qual o primeiro comando que rodamos? Exato! `npm install`. No container é a mesma coisa, precisamos rodar o `npm install` para instalar todas as nossas dependências do projeto.
+
+```
+RUN npm install
+```
