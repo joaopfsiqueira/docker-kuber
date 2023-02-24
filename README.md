@@ -4,7 +4,7 @@
 
 # Comandos dockerfile
 
-- O arquivo `Dockerfile` é responsável por criar a nossa imagem que vai ser subida em um container. Dentro dele precisamos especificar alguns comandos, segue um exemplo desses comandos:
+- O arquivo `Dockerfile` é responsável por criar a nossa imagem que vai ser subida em um container. Dentro dele precisamos especificar alguns comandos e cada um desses comandos é uma camada dentro da nossa imagem, ou certo, se alterarmos qualquer linha, as outras não serão afetadas. Segue um exemplo desses comandos.
 
 ## from
 
@@ -57,3 +57,8 @@ RUN npm install
 ```
 CMD ["npm","start"]
 ```
+
+# Executando uma imagem.
+
+1 - Para rodarmos a nossa imagem e criar um container através dela, primeiro devemos _buildar_ a nossa imagem: `docker build <diretorio da imagem>`.<br>
+2 - Depois, as próximas vezes, só usamos o comando `docker run <imagem>` para executá-la
