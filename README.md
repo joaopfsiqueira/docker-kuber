@@ -154,3 +154,9 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 - Uma forma prática de persistir dados em aplicações e não depender de containers para isso.
 - Todo dado criado por um container é salvo nele, quando o container é removido perdemos os dados, então precisamos dos volumes para gerenciar os dados e também conseguir fazer backups de formas mais simples.
+
+### Tipos de volumes
+
+1 - Anônimos (anonymous): Diretórios criados pela flag `-v`, porém com um nome aleatório.
+2 - Nomeados (named): São volumes com nomes, podemos nos referir a estes facilmente e saber para que são utilizados no nosso ambiente. Por exemplo: volumeMysql
+3 - Bind Mounts: Uma forma de salvar dados na nossa máquina, sem o gerenciamento do docker, informamos um diretório para este fim. Estarei salvando fora do docker, salvando por exemplo no localhost, deixando tudo por minha responsabilidade.
