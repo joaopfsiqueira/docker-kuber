@@ -119,3 +119,14 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Verificados dados de um container
 
 `docker inspect idcontainer`
+
+# Verificar processamento do docker
+
+- Vamos validar como está sendo gasto os recursos do nosso computador, cpu, memoria.
+
+`docker stats`
+
+# Autenticação docker hub
+
+- Precisamos no autenticar no nosso terminal para enviar imagems ao docker hub.
+  `docker login`
