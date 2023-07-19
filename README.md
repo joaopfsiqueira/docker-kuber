@@ -134,3 +134,10 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Logout docker hub
 
 - E para deslogar. basta: `docker logout`
+
+# Enviar imagens ao docker hub.
+
+- Podemos subir nossas imagens nos repositorios dentro do docker hub.
+- Primeiro temos que criar um repositorio na nossa conta dentro do site do dockerhub.
+- Depois é só criar buildar uma nova imagem local, com o mesmo nome do repositorio, incluindo o username na frente: _userDoDocker/repository_.
+  `docker push userDockerHub/repositoryCriado`
