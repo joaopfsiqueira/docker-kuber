@@ -80,31 +80,31 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 - Rode esse comando no seu terminal caso tenha docker configurado! `docker run -d -p 4000:80 alexwhen/docker-2048` esse comando vai baixar a imagem do alexwhen, referente ao jogo 2048! Ao acessar o endereço _localhost:4000_ no navegador, o jogo vai ser aberto!
 
-# Download images
+## Download images
 
 - Basta rodar um `docker pull <imagem>`, ou ao rodar um build de uma imagem que utiliza alguma outra por dockerfile ou docker-compose, e essa imagem não existe na sua máquina, ele faz o download.
 
-# Usando vários containers da mesma imagem.
+## Usando vários containers da mesma imagem.
 
 - É possível rodar vários containers da mesma imagem, basta rodar um `docker run -d -p 5000:5000 --name nomeimagem1 idimagem`, depois, rodar o mesmo comando para as outras imagens, alterando o nomeimagem e as portas.
 
-# Nomeando imagens após criadas
+## Nomeando imagens após criadas
 
 `docker tag idimagem nomedaimagem`
 
-# Rodando container "Detached"
+## Rodando container "Detached"
 
 - Quando rodamos um container, é comum "travar" o terminal naquele run. Para evitar isso, precisamos da tag `-d`.
 
 `docker run -d -p 5000:5000 <imagem>`
 
-# Docker system prune
+## Docker system prune
 
 - Remove dados que não estão sendo utilizados, seja imagem, container, etc.
 
 `docker system prune`
 
-# Copiar arquivo entre containers.
+## Copiar arquivo entre containers.
 
 - Podemos tirar arquivos de um container para um diretório, e pegar do diretório para outro container
 
@@ -112,30 +112,30 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 `docker cp nomecontainer:/app/app.js ./copia/`
 
-# Verificar processamento do container
+## Verificar processamento do container
 
 `docker top container`
 
-# Verificados dados de um container
+## Verificados dados de um container
 
 `docker inspect idcontainer`
 
-# Verificar processamento do docker
+## Verificar processamento do docker
 
 - Vamos validar como está sendo gasto os recursos do nosso computador, cpu, memoria.
 
 `docker stats`
 
-# Autenticação docker hub
+## Autenticação docker hub
 
 - Precisamos no autenticar no nosso terminal para enviar imagems ao docker hub.
   `docker login`
 
-# Logout docker hub
+## Logout docker hub
 
 - E para deslogar. basta: `docker logout`
 
-# Enviar imagens ao docker hub.
+## Enviar imagens ao docker hub.
 
 - Podemos subir nossas imagens nos repositorios dentro do docker hub.
 - Primeiro temos que criar um repositorio na nossa conta dentro do site do dockerhub.
@@ -149,3 +149,8 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 `docker build -t userDockerHub/repository:v2 .`
 `docker push userDockerHub/repository:v2`
+
+# Volumes
+
+- Uma forma prática de persistir dados em aplicações e não depender de containers para isso.
+- Todo dado criado por um container é salvo nele, quando o container é removido perdemos os dados, então precisamos dos volumes para gerenciar os dados e também conseguir fazer backups de formas mais simples.
