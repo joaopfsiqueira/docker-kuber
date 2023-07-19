@@ -76,4 +76,8 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 # Imagem boa para teste!
 
-- Rode esse comando no seu terminal caso tenha docker configurado! `docker run -d -p 4000:80 alexwhen/docker-2048` esse comando vai baixar a imagem do alexwhen, referente ao jogo 2048! Ao acessar o endereço *localhost:4000* no navegador, o jogo vai ser aberto!
+- Rode esse comando no seu terminal caso tenha docker configurado! `docker run -d -p 4000:80 alexwhen/docker-2048` esse comando vai baixar a imagem do alexwhen, referente ao jogo 2048! Ao acessar o endereço _localhost:4000_ no navegador, o jogo vai ser aberto!
+
+# Download images
+
+- Basta rodar um `docker pull <imagem>`, ou ao rodar um build de uma imagem que utiliza alguma outra por dockerfile ou docker-compose, e essa imagem não existe na sua máquina, ele faz o download.
