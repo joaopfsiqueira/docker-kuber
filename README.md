@@ -65,6 +65,8 @@ CMD ["npm","start"]
 
 `docker build .` dentro da pasta onde está o dockerfile
 
+- nomeando no build: `docker build -t nomeDaImagem .(esse ponto representa o diretório, como estou na mesma pasta do dockerfile, é isso.)`
+
 `docker run -d -p 3000:3000 b0f59f465ccb`, nesse exemplo, eu liberei o terminal com -d, e com o prefixo `-p 3000:3000` eu informei a porta que está rodando o meu container e tornei ela acessível na minha máquina para acessar no navegador. Depois só passei o id da imagem que eu buildei anteriormente, já que eu não configurei nenhum nome para a imagem.
 
 Para colocar um nome, basta usar o prefixo `--name +nome` no comando de build ou no comando de rodar a imagem, para criar um container com um nome!
@@ -85,3 +87,7 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Usando vários containers da mesma imagem.
 
 - É possível rodar vários containers da mesma imagem, basta rodar um `docker run -d -p 5000:5000 --name nomeimagem1 idimagem`, depois, rodar o mesmo comando para as outras imagens, alterando o nomeimagem e as portas.
+
+# Nomeando imagens após criadas
+
+`docker tag idimagem nomedaimagem`
