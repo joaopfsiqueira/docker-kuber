@@ -111,3 +111,7 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 `docker cp copiarDe colarEM`
 
 `docker cp nomecontainer:/app/app.js ./copia/`
+
+# Verificar processamento do container
+
+`docker top container`
