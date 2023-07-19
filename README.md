@@ -130,3 +130,7 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 
 - Precisamos no autenticar no nosso terminal para enviar imagems ao docker hub.
   `docker login`
+
+# Logout docker hub
+
+- E para deslogar. basta: `docker logout`
