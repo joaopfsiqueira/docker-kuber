@@ -103,3 +103,11 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 - Remove dados que não estão sendo utilizados, seja imagem, container, etc.
 
 `docker system prune`
+
+# Copiar arquivo entre containers.
+
+- Podemos tirar arquivos de um container para um diretório, e pegar do diretório para outro container
+
+`docker cp copiarDe colarEM`
+
+`docker cp nomecontainer:/app/app.js ./copia/`
