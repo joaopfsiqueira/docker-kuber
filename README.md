@@ -115,3 +115,7 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Verificar processamento do container
 
 `docker top container`
+
+# Verificados dados de um container
+
+`docker inspect idcontainer`
