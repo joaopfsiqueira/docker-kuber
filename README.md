@@ -140,4 +140,12 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 - Podemos subir nossas imagens nos repositorios dentro do docker hub.
 - Primeiro temos que criar um repositorio na nossa conta dentro do site do dockerhub.
 - Depois é só criar buildar uma nova imagem local, com o mesmo nome do repositorio, incluindo o username na frente: _userDoDocker/repository_.
+  `docker build -t userDoDocker/repository`
   `docker push userDockerHub/repositoryCriado`
+
+## Atualizando imagens no dockerhub.
+
+- Podemos atualizar as imagens que já subimos no dockerhub. Para isso, buildamos a nova versão com uma nova tag. Depois é só fazer o push com a tag no final.
+
+`docker build -t userDockerHub/repository:v2 .`
+`docker push userDockerHub/repository:v2`
