@@ -81,3 +81,7 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Download images
 
 - Basta rodar um `docker pull <imagem>`, ou ao rodar um build de uma imagem que utiliza alguma outra por dockerfile ou docker-compose, e essa imagem não existe na sua máquina, ele faz o download.
+
+# Usando vários containers da mesma imagem.
+
+- É possível rodar vários containers da mesma imagem, basta rodar um `docker run -d -p 5000:5000 --name nomeimagem1 idimagem`, depois, rodar o mesmo comando para as outras imagens, alterando o nomeimagem e as portas.
