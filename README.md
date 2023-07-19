@@ -91,3 +91,9 @@ docker run -d -p 3000:3000 --name dockerkuber b0f59f465ccb
 # Nomeando imagens após criadas
 
 `docker tag idimagem nomedaimagem`
+
+# Rodando container "Detached"
+
+- Quando rodamos um container, é comum "travar" o terminal naquele run. Para evitar isso, precisamos da tag `-d`.
+
+`docker run -d -p 5000:5000 <imagem>`
