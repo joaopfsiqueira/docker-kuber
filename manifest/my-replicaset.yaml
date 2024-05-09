@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: frontend-rs
+    labels:
+        apps: frontend
+
+spec:
+    template: #informações para o container a ser criado dentro do pod, o nome e a imagem que será baixada.
+        metadata:
+            name: my-pod-webserver
+            labels:
+                apps: my-app-new
+                tier: frontend
+        spec:
+            containers:
+                - name: my-container-nginx
+                  image: nginx
+
+    selector: #faz parte das especificações do REPLICASET. Ele é responsável por selecionar os pods que fazem parte do replicaset.
+        matchLabels:
+            apps: my-app-new # mesmo pod criado acima
+    replicas: 3
