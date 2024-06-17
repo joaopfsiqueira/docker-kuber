@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
     name: my-pod-webserver
+    # namespace: backend
     labels:
         apps: my-app
         tier: frontend
