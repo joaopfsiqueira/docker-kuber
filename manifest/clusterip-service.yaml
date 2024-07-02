@@ -1,29 +1,29 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: web-pod
-  labels:
-    type: web-app
+    name: web-pod
+    labels:
+        type: web-app
 spec:
-  containers:
-    - name: web-server-apache
-      image: httpd
-      ports:
-       - containerPort: 80
-    - name: web-server-tomcat
-      image: tomcat
-      ports: 
-       - containerPort: 8080
+    containers:
+        - name: web-server-apache
+          image: httpd
+          ports:
+              - containerPort: 80
+        - name: web-server-tomcat
+          image: tomcat
+          ports:
+              - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+    name: frontend-service
 spec:
-  type: ClusterIP
-  selector:
-    type: web-app
-  ports:
-    - name: http
-      port: 86
-      targetPort: 86
+    type: ClusterIP
+    selector:
+        type: web-app
+    ports:
+        - name: http
+          port: 80 #lembrando que a requisição chega para essa porta
+          targetPort: 80 # e é redirecionada para essa porta, ou seja, para o web-server-apache declaro ali em cima. Se eu quiser redirecionar para o tomcat, eu coloco a porta 8080
