@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: liveness-pod
+    name: liveness-pod
 spec:
-  containers:
-  - name: liveness-container-test
-    image: busybox
-    args:
-    - /bin/sh
-    - -c
-    - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
-    
-    livenessProbe:
-      exec:
-        command:
-        - cat
-        - /tmp/healthy
-      initialDelaySeconds: 5
-      periodSeconds: 5
-      failureThreshold: 3
+    containers:
+        - name: liveness-container-test
+          image: busybox
+          args:
+              - /bin/sh # entrando no shell
+              - -c # comando para falar que vamos passar uma linha de comando
+              - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600 # comando para criar um arquivo chamado healthy e depois de 30 segundos remover o arquivo
+
+          livenessProbe:
+              exec:
+                  command:
+                      - cat
+                      - /tmp/healthy # cat dentro de helthy
+              initialDelaySeconds: 5 # tempo para iniciar a verificação
+              periodSeconds: 5 # tempo para verificar
+              failureThreshold: 3 # quantidade de falhas para considerar o container morto
