@@ -6,4 +6,5 @@ spec:
     containers:
         - name: redis
           image: redis
-    nodeName: minikube
+    nodeSelector:
+        disktype: ssd
