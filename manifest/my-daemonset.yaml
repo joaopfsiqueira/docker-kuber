@@ -6,6 +6,8 @@ metadata:
         app: frontend
 
 spec:
+    updateStrategy:
+        type: OnDelete
     template:
         metadata:
             name: pod-web-server
@@ -14,8 +16,8 @@ spec:
                 tier: frontend
         spec:
             containers:
-                - name: my-container-nginx
-                  image: nginx
+                - name: my-container-tomcat
+                  image: tomcat
             nodeName: minikube # nome do worker node onde o pod será criado
     selector:
         matchLabels:
