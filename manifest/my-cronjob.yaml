@@ -1,23 +1,24 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: my-cj
+    name: my-cj
 spec:
-  failedJobsHistoryLimit: 5
-  successfulJobsHistoryLimit: 10
-  schedule: "* * * * *"
-  jobTemplate:
-    spec:
-      parallelism: 5
-      completions: 10
-      completionMode: "Indexed"
-      template:
+    suspend: true # para rodar tem que tirar o true
+    failedJobsHistoryLimit: 5
+    successfulJobsHistoryLimit: 10
+    schedule: '* * * * *'
+    jobTemplate:
         spec:
-          containers:
-          - name: my-container-busybox
-            image: busybox
-            command:
-            - "bin/sh"
-            - "-c"
-            - "for i in 1 2; do echo Lucky number $i = $((1 + RANDOM % 70)); done"
-          restartPolicy: Never
+            parallelism: 5
+            completions: 10
+            completionMode: 'Indexed'
+            template:
+                spec:
+                    containers:
+                        - name: my-container-busybox
+                          image: busybox
+                          command:
+                              - 'bin/sh'
+                              - '-c'
+                              - 'for i in 1 2; do echo Lucky number $i = $((1 + RANDOM % 70)); done'
+                    restartPolicy: Never
