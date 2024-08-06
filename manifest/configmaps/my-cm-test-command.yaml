@@ -22,5 +22,5 @@ spec:
               - 'bin/sh'
               - '-c'
               - 'echo My Database = $database - $database_uri'
-    restartPolicy: Never
+    restartPolicy: Never # lembrando que o restartpolicy tem a ver com o pod, não com o container dentro dele.
 # com o $ podemos acessar a variável de ambiente dentro de um container linux.
