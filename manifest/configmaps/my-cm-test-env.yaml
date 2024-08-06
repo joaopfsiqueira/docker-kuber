@@ -1,0 +1,27 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm
+  namespace: default
+data:
+  #Connection database config
+  database: mysql
+  database_uri: mysql://localhost:3306
+
+  #User interface
+  font.title: Arial Bold
+  background-color: red
+  theme.1: clean
+  theme.2: dark
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-cm-env
+spec:
+  containers:
+  - name: my-container
+    image: nginx
+    envFrom:
+    - configMapRef:
+        name: my-cm

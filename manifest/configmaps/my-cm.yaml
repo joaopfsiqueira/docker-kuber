@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm
+data:
+  #Connection database config
+  my.config.db: |
+    database: mariadb
+    database_uri: mariadb://localhost:3306
+  test.field: hello
+  test2: hello2.1
+  test3: hello3.0
+immutable: true
