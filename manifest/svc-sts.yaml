@@ -34,7 +34,7 @@ spec:
         - metadata:
               name: my-pv
           spec:
-              accessModes: ['ReadWriteOnce']
+              accessModes: ['ReadWriteOnce'] # leitura e escrita
               resources:
                   requests:
-                      storage: 1Gi
+                      storage: 1Gi # 1 gigabyte de volume
