@@ -1,19 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-apache # 10.244.0.10
+    name: pod-apache # 10.244.0.178
 spec:
-  containers:
-  - name: my-apache
-    image: httpd
+    containers:
+        - name: my-apache
+          image: httpd
 
 ---
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-nginx # 10.244.0.11
+    name: pod-nginx # 10.244.0.179
 spec:
-  containers:
-  - name: my-nginx
-    image: nginx
+    containers:
+        - name: my-nginx
+          image: nginx
